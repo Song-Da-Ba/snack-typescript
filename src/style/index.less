@@ -1,0 +1,65 @@
+@bg-color:#b7d4a8;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font: bold 20px Courier;
+}
+#main{
+  width: 360px;
+  height: 420px;
+  background: @bg-color;
+  margin: 100px auto;
+  border: 10px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  //主轴对齐方式
+  justify-content: space-around;
+  //侧轴对齐方式
+  align-items: center;
+
+
+  #stage{
+    width: 304px;
+    height: 304px;
+    border: 2px solid black;
+    position: relative;
+    #snake{
+     &>div{
+      width: 10px;
+      height: 10px;
+      background: black;
+      border: 1px solid @bg-color;
+      position: absolute;
+     }
+     #head{
+      background: red;
+     }
+    }
+    #food{
+      width: 10px;
+      height: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 50px;
+      left: 30px;
+
+      &>div{
+        width: 4px;
+        height: 4px;
+        background: black;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  #score-panel{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
